@@ -5,7 +5,7 @@ function EwillHeader() {
         <div className="first-bubble"></div>
         <div className="sec-bubble"></div>
         <div className="white-sea"></div>
-        <div className="xxlbg col-12 d-flex flex-column align-items-center ">
+        <div className="col-12 d-flex flex-column align-items-center ">
           <h1 className="header-title text-center text-white">
             There is no one
           </h1>
