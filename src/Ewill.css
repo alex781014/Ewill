@@ -15,8 +15,8 @@
     background: url(../public/images/bubble1.png) no-repeat;
     width: 12px;
     height: 12px;
-    top: 187px;
-    left: 375px;
+    top: 22.5%;
+    left: 90%;
     position: absolute;
 }
 
@@ -25,8 +25,8 @@
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 207px;
-    left: 355px;
+    top: 25.5%;
+    left: 85.5%;
 }
 
 .white-sea {
@@ -390,6 +390,8 @@
 @media (min-width: 1400px) {
     .white-sea {
         background: url(../public/images/xxlwhitesea.png) no-repeat;
+        width: 4784px;
+        background-position: 0 20px;
     }
 
     .sup {
@@ -411,8 +413,8 @@
         background: url(../public/images/bubble1.png) no-repeat;
         width: 12px;
         height: 12px;
-        top: 183px;
-        left: 1064px;
+        top: 28%;
+        left: 76%;
         position: absolute;
     }
 
@@ -421,8 +423,8 @@
         width: 20px;
         height: 20px;
         position: absolute;
-        top: 209px;
-        left: 1038px;
+        top: 32%;
+        left: 74%;
     }
 
     .header-content {
@@ -445,21 +447,29 @@
         left: 50%;
         transform: translate(55%, 0);
     }
-    .form-submit-btn{
+
+    .form-submit-btn {
         margin-top: 42px;
     }
-        .gift-area {
+
+    .gift-area {
         width: 598px;
         margin: 0 auto;
         padding-left: 0;
         padding-right: 0;
     }
+
+    .sea {
+        object-fit: cover;
+        width: 100%;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1399px) {
     .white-sea {
-        background: url(../public/images/bigwhitesea.png) no-repeat;
-        /* background-size: cover; */
+        background: url(../public/images/xxlwhitesea.png) no-repeat;
+        background-size: cover;
+        background-position: 0 20px;
         height: 586px;
         position: absolute;
     }
@@ -483,8 +493,8 @@
         background: url(../public/images/bubble1.png) no-repeat;
         width: 12px;
         height: 12px;
-        top: 176px;
-        left: 686px;
+        top: 26%;
+        left: 90%;
         position: absolute;
     }
 
@@ -493,8 +503,8 @@
         width: 20px;
         height: 20px;
         position: absolute;
-        top: 202px;
-        left: 660px;
+        top: 29.5%;
+        left: 87%;
     }
 
     .header-content {
