@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import './Ewill.css'
+import EwillHeader from "./component/EwillHeader";
+import EwillFormArea from "./component/EwillFormArea";
+import EwillGiftArea from "./component/EwillGiftArea";
+import EwillLotteryInfo from "./component/EwillLotteryInfo";
+import EwillShop from "./component/EwillShop";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+return (
+  <>
+    <div className="container-fluid">
+      <EwillHeader />
+      <EwillFormArea />
+      <EwillGiftArea/>
+      <EwillLotteryInfo/>
+      <EwillShop/>
     </div>
-  );
+  </>
+);
 }
 
 export default App;
