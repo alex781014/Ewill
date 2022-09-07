@@ -66,14 +66,14 @@ return (
               payment <span className="text-danger">*</span>
             </label>
             <select
-              class="form-select input-form-style"
+              className="form-select input-form-style"
               aria-label="Default select example"
               name="payWay"
             >
               <option value="1">
-                digtal payment <span className="text-danger">*</span>
+                digtal payment 
               </option>
-              <option value="1">ATM</option>
+              <option value="2">ATM</option>
             </select>
 
             <div className="sec-form-btn text-center">FORM</div>
