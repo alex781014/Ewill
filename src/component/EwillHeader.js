@@ -5,14 +5,18 @@ function EwillHeader() {
         <div className="first-bubble"></div>
         <div className="sec-bubble"></div>
         <div className="white-sea"></div>
-        <div className="col-12 d-flex flex-column align-items-center ">
+        <div className="col-12 d-flex flex-column align-items-center header-content-area">
           <h1 className="header-title text-center text-white">
             There is no one
           </h1>
           <h2 className="header-stitle text-center text-white">
             who loves pain
           </h2>
-          <div className="form-btn text-center text-white">FORM</div>
+
+          <a href="#thisform">
+            <div className="form-btn text-center text-white">FORM</div>
+          </a>
+
           <div className="header-content d-flex flex-column justify-content-center ">
             <img src="images/sup.svg" alt="sup" className="sup" />
             <img src="images/sup2.svg" alt="sup2" className="sup-sec" />

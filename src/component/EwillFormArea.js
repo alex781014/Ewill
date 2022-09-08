@@ -5,6 +5,7 @@ function EwillFormArea() {
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [amount, setAmount] = useState("");
+  const [formText,setFormText] = useState("FORM")
   const [fieldErrors, setFirldErrors] = useState({
     storeName: "",
     fullName: "",
@@ -39,7 +40,6 @@ function EwillFormArea() {
       <div className="row">
         <div className="col-12 form-area">
           <form
-            className=""
             name="form1"
             onSubmit={handleSubmit}
             onInvalid={handleInvalid}
@@ -120,7 +120,7 @@ function EwillFormArea() {
                 <option value="2">ATM</option>
               </select>
 
-              <div className="sec-form-btn text-center">FORM</div>
+              <div className="sec-form-btn text-center" id="thisform">{formText}</div>
               <img
                 src="images/turtle.svg"
                 alt="turtle"
