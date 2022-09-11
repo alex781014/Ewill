@@ -9,8 +9,8 @@ function EwillFormArea() {
   const [fieldErrors, setFirldErrors] = useState({
     storeName: "",
     fullName: "",
-    phone: "",
-    amount:"",
+    phoneNumber: "",
+    amount: "",
   });
   const checkPhoneNumber = (e) => {
     const onlyNumber = e.target.value.replace(/\D/g, "");
@@ -23,8 +23,9 @@ function EwillFormArea() {
   }
   // 表單用
   const handleInvalid = (e)=>{
+    // 不合法驗證泡泡取消
     e.preventDefault();
-    setFirldErrors({...fieldErrors,[e.target.name]:''})
+    setFirldErrors({ ...fieldErrors, [e.target.name]: 'required'});
   }
   // 表單用
   const handleFormChange = (e)=>{
@@ -36,8 +37,8 @@ function EwillFormArea() {
   }
 
   const handleChangeFormText = (e) =>{
-    e.preventDefault();
-    setSubMitText("success");
+    // e.preventDefault();
+    // setSubMitText("success");
   }
 
   return (
@@ -63,10 +64,14 @@ function EwillFormArea() {
                 onChange={(e) => {
                   setStoreName(e.target.value);
                 }}
-                className="form-select form-mb input-form-style"
+                className={
+                  fieldErrors.storeName === ""
+                    ? "form-mb input-form-style"
+                    : "input-form-style"
+                }
                 required
               />
-              {fieldErrors.storeName}
+              <span className="error">{fieldErrors.storeName}</span>
               <datalist id="storeName">
                 <option value="store1">store1</option>
                 <option value="store2">store2</option>
@@ -78,7 +83,11 @@ function EwillFormArea() {
               <input
                 type="text"
                 placeholder="placeholder text"
-                className="form-mb input-form-style"
+                className={
+                  fieldErrors.fullName === ""
+                    ? "form-mb input-form-style"
+                    : "input-form-style"
+                }
                 name="fullName"
                 value={fullName}
                 onChange={(e) => {
@@ -86,6 +95,8 @@ function EwillFormArea() {
                 }}
                 required
               />
+              <span className="error">{fieldErrors.fullName}</span>
+
               <label className="label-title-style">
                 phone <span className="text-danger">*</span>
               </label>
@@ -95,17 +106,27 @@ function EwillFormArea() {
                 value={phoneNumber}
                 onChange={(e) => checkPhoneNumber(e)}
                 placeholder="placeholder text"
-                className="form-mb input-form-style"
-                name="phone"
+                className={
+                  fieldErrors.phoneNumber === ""
+                    ? "form-mb input-form-style"
+                    : "input-form-style"
+                }
+                name="phoneNumber"
                 required
               />
+              <span className="error">{fieldErrors.phoneNumber}</span>
+
               <label className="label-title-style">
                 Amount of consumption <span className="text-danger">*</span>
               </label>
               <input
                 type="number"
                 placeholder="placeholder text"
-                className="form-mb input-form-style"
+                className={
+                  fieldErrors.amount === ""
+                    ? "form-mb input-form-style"
+                    : "input-form-style"
+                }
                 name="amount"
                 value={amount}
                 onChange={(e) => {
@@ -113,6 +134,8 @@ function EwillFormArea() {
                 }}
                 required
               />
+              <span className="error">{fieldErrors.amount}</span>
+
               <label className="label-title-style">
                 payment <span className="text-danger">*</span>
               </label>
