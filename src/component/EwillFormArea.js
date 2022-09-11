@@ -18,16 +18,21 @@ function EwillFormArea() {
   };
   // 表單用
   const handleSubmit = (e)=>{
-    e.preventDefault()
-    // console.log(storeName, fullName, phoneNumber, amount);
+    // e.preventDefault()
+
+      setSubMitText("success");
+  
+    console.log(e.target)
+    console.log(storeName, fullName, phoneNumber, amount);
   }
   // 表單用
   const handleInvalid = (e)=>{
     // 不合法驗證泡泡取消
     e.preventDefault();
+    setSubMitText("failure");
     setFirldErrors({ ...fieldErrors, [e.target.name]: 'required'});
   }
-  // 表單用
+  // 表單用 更新必填文字
   const handleFormChange = (e)=>{
     setFirldErrors({
       ...fieldErrors,
@@ -36,10 +41,10 @@ function EwillFormArea() {
 
   }
 
-  const handleChangeFormText = (e) =>{
-    // e.preventDefault();
-    // setSubMitText("success");
-  }
+  // const handleChangeFormText = (e) =>{
+  //   e.preventDefault();
+  //   setSubMitText("success");
+  // }
 
   return (
     <>
@@ -160,9 +165,21 @@ function EwillFormArea() {
             <div className="d-flex justify-content-center">
               <button
                 type="submit"
-                className="form-submit-btn"
-                onClick={handleChangeFormText}
+                className="form-submit-btn success-type"
+                // onClick={handleChangeFormText}
               >
+                <img
+                  className="me-3"
+                  src={
+                    subMitText === "submit"
+                      ? ""
+                      : subMitText === "success"
+                      ? "images/successtype.svg":"images/failure.svg"
+                      
+                  }
+                  // "images/successtype.svg"
+                  alt=""
+                />
                 {subMitText}
               </button>
             </div>
