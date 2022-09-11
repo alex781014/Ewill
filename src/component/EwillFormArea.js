@@ -5,7 +5,7 @@ function EwillFormArea() {
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [amount, setAmount] = useState("");
-  const [formText,setFormText] = useState("FORM")
+  const [subMitText,setSubMitText] = useState("submit")
   const [fieldErrors, setFirldErrors] = useState({
     storeName: "",
     fullName: "",
@@ -33,6 +33,11 @@ function EwillFormArea() {
       [e.target.name]: '',
     });
 
+  }
+
+  const handleChangeFormText = (e) =>{
+    e.preventDefault();
+    setSubMitText("success");
   }
 
   return (
@@ -120,7 +125,9 @@ function EwillFormArea() {
                 <option value="2">ATM</option>
               </select>
 
-              <div className="sec-form-btn text-center" id="thisform">{formText}</div>
+              <div className="sec-form-btn text-center" id="thisform">
+                FORM
+              </div>
               <img
                 src="images/turtle.svg"
                 alt="turtle"
@@ -128,8 +135,12 @@ function EwillFormArea() {
               />
             </div>
             <div className="d-flex justify-content-center">
-              <button type="submit" className="form-submit-btn ">
-                submit
+              <button
+                type="submit"
+                className="form-submit-btn"
+                onClick={handleChangeFormText}
+              >
+                {subMitText}
               </button>
             </div>
           </form>
