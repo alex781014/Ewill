@@ -38,6 +38,7 @@ function EwillFormArea() {
       ...fieldErrors,
       [e.target.name]: "",
     });
+    setSubMitText("submit");
   };
 
   // const handleChangeFormText = (e) =>{
