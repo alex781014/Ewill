@@ -404,9 +404,11 @@ a {
     height: 5px;
 }
 
-input:invalid{
+.inputInv:invalid{
     border: 3px solid red;
 }
+
+
 
 .error{
     font-size: 12px;

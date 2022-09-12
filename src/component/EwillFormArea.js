@@ -31,6 +31,11 @@ function EwillFormArea() {
       ...fieldErrors,
       [e.target.name]: e.target.validationMessage,
     });
+    const inputs = document.querySelectorAll(".input-form-style");
+    for (const input of inputs){
+      input.classList.add('inputInv')
+    }
+
   };
   // 表單用 更新必填文字
   const handleFormChange = (e) => {
@@ -40,11 +45,6 @@ function EwillFormArea() {
     });
     setSubMitText("submit");
   };
-
-  // const handleChangeFormText = (e) =>{
-  //   e.preventDefault();
-  //   setSubMitText("success");
-  // }
 
   return (
     <>
@@ -95,6 +95,7 @@ function EwillFormArea() {
                     : "input-form-style"
                 }
                 name="fullName"
+                pattern="^[\u4e00-\u9fa5]+$|^[a-zA-Z\s]+$"
                 value={fullName}
                 onChange={(e) => {
                   setFullName(e.target.value);
